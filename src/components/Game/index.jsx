@@ -1,10 +1,15 @@
 import React from 'react';
+import { Canvas } from './styled'
+
 
 class Game extends React.Component {
   
   render() {
     return(
-      <canvas height="100px" width="100px">j</canvas>
+      <section>
+        <h1>The Game</h1>
+        <Canvas height="100" width="100"></Canvas>
+      </section>
     )
   }
 }

@@ -4,7 +4,8 @@ const url = require('url')
 
 function mainWindow(){
   let mainWindow = new BrowserWindow({
-    title: 'test',
+    title: 'Snake-game',
+    backgroundColor: '#E8D7F1',
     webPreferences: {
       nodeIntegration: true
     }
