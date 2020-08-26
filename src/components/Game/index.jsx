@@ -8,7 +8,6 @@ class Game extends React.Component {
   }
 
   state = {
-    window: <Canvas width={this.props.width} height={this.props.height}></Canvas>,
     snake: {
       size: 20,
       length: 0,
@@ -17,10 +16,22 @@ class Game extends React.Component {
       y: 0
     }
   }
+  createGame = () => {
+    return document.getElementsByTagName('canvas')[0]
+    .getContext('2d')
+  }
 
+  createSnake = () => {
+    const { x, y, size } = this.state.snake
+    const ctx = this.createGame()
+    ctx.fillRect(x, y, size, size)
+  }
+
+  handleControl = () => {
+    
+  }
   componentDidMount() {
-    const canvas = document.getElementsByTagName('canvas')
-    const ctx = canvas
+    this.createSnake()
   }
 
   render() {
@@ -29,7 +40,7 @@ class Game extends React.Component {
         <div>Best Record</div>
         <div>Eaten apples</div>
         <h1>The Game</h1>
-        {this.state.window}
+        <Canvas width={this.props.width} height={this.props.height}></Canvas>
       </Container>
     )
   }
