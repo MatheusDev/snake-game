@@ -4,7 +4,7 @@ import Game from './components/Game/index'
 function App() {
   return (
     <div className="App">
-      <Game />
+      <Game width={500} height={500} />
     </div>
   );
 }

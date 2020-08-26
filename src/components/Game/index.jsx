@@ -1,15 +1,36 @@
 import React from 'react';
-import { Canvas } from './styled'
-
+import { Canvas, Container } from './styled'
 
 class Game extends React.Component {
-  
+  constructor(props) {
+    super(props)
+    this.props = props
+  }
+
+  state = {
+    window: <Canvas width={this.props.width} height={this.props.height}></Canvas>,
+    snake: {
+      size: 20,
+      length: 0,
+      color: 'green',
+      x: 0,
+      y: 0
+    }
+  }
+
+  componentDidMount() {
+    const canvas = document.getElementsByTagName('canvas')
+    const ctx = canvas
+  }
+
   render() {
     return(
-      <section>
+      <Container>
+        <div>Best Record</div>
+        <div>Eaten apples</div>
         <h1>The Game</h1>
-        <Canvas height="100" width="100"></Canvas>
-      </section>
+        {this.state.window}
+      </Container>
     )
   }
 }
