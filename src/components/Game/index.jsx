@@ -8,6 +8,12 @@ class Game extends React.Component {
   }
 
   state = {
+    control: {
+      ArrowRight: 2,
+      ArrowLeft:3,
+      ArrowUp: 3,
+      ArrowDown: 2
+    },
     snake: {
       size: 20,
       length: 0,
@@ -16,6 +22,7 @@ class Game extends React.Component {
       y: 0
     }
   }
+
   createGame = () => {
     return document.getElementsByTagName('canvas')[0]
     .getContext('2d')
@@ -27,8 +34,8 @@ class Game extends React.Component {
     ctx.fillRect(x, y, size, size)
   }
 
-  handleControl = () => {
-    
+  handleControl = (input) => {
+   console.log("tecla precionada " + input)
   }
   componentDidMount() {
     this.createSnake()
@@ -36,11 +43,11 @@ class Game extends React.Component {
 
   render() {
     return(
-      <Container>
+      <Container onKeyDown={key => this.handleControl()}>
         <div>Best Record</div>
         <div>Eaten apples</div>
         <h1>The Game</h1>
-        <Canvas width={this.props.width} height={this.props.height}></Canvas>
+        <Canvas width={this.props.width} height={this.props.height} ></Canvas>
       </Container>
     )
   }
