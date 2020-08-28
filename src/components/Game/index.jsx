@@ -28,16 +28,33 @@ class Game extends React.Component {
     ctx.fillRect(x, y, size, size)
   }
 
-  handleControl = () => {
+  handleMoving = (key) => {
+
+  }
+  handlekey = () => {
     let { x, y, size } = this.state.snake
  
     const control = {
-      ArrowRight: () => '1',
-      ArrowLeft: () => this.setState({...this.state.snake, x: x++}),
-      ArrowUp: ,
-      ArrowDown: () => '2'
+      ArrowRight: ,
+      ArrowLeft: () => this.setStat e({...this.state.snake, x: x++}),
+      ArrowUp: handleMoving(),
+      ArrowDown: 
     }
 
+    function handleMoving() {  
+      function ArrowRight() {
+        
+      }
+      function ArrowLeft() {
+
+      }
+      function ArrowUp() {
+
+      }
+      function ArrowDown() {
+
+      }
+    }
     const middleware = (key) => {
       window.setInterval(() => {
         control[key]()

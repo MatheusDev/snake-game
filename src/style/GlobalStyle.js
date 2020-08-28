@@ -1,6 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalSTyle = createGlobalStyle`
+  :root {
+    --primary-color: #9a4c95;
+    --second-color: #745c97;
+    --trity-color: #d3bccc;
+    --quarter-color: #82A7A6;
+  }
   * {
     padding: 0;
     margin: 0;
