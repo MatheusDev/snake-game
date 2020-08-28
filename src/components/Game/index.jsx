@@ -34,12 +34,15 @@ class Game extends React.Component {
     const control = {
       ArrowRight: () => '1',
       ArrowLeft: () => this.setState({...this.state.snake, x: x++}),
-      ArrowUp: () => '2',
+      ArrowUp: ,
       ArrowDown: () => '2'
     }
 
-    function middleware(key) {
-      setInterval(() => control[key](),1000)
+    const middleware = (key) => {
+      window.setInterval(() => {
+        control[key]()
+        console.log(this.state.snake)
+      },1000)
     }
 
     window.addEventListener('keydown', key => {
