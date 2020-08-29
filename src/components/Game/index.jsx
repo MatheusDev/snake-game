@@ -28,49 +28,58 @@ class Game extends React.Component {
     ctx.fillRect(x, y, size, size)
   }
 
-  handleMoving = (key) => {
+  //handleMoving = (key) => {
 
-  }
-  handlekey = () => {
-    let { x, y, size } = this.state.snake
+  //}
+  handleMoving = () => {
+
+    //let { x, y, size } = this.state.snake
  
+    
+
+    const ArrowRight = () => {
+    
+    }
+    const ArrowLeft = () => {
+
+    }
+    const ArrowUp = () => {
+      window.setInterval(() => {
+        let y = this.state.snake.y
+        this.setState({...this.state.snake, y: y})
+      },500)
+    }
+    const ArrowDown = () => {
+
+    }
+
     const control = {
-      ArrowRight: ,
-      ArrowLeft: () => this.setStat e({...this.state.snake, x: x++}),
-      ArrowUp: handleMoving(),
-      ArrowDown: 
+      ArrowRight: ArrowRight(),
+      ArrowLeft: ArrowLeft(),
+      ArrowUp: ArrowUp(),
+      ArrowDown: ArrowDown()
     }
 
-    function handleMoving() {  
-      function ArrowRight() {
-        
-      }
-      function ArrowLeft() {
-
-      }
-      function ArrowUp() {
-
-      }
-      function ArrowDown() {
-
-      }
-    }
-    const middleware = (key) => {
+    window.addEventListener('keydown', tecla => {
+      let { key } = tecla
+      control[key]()()
+      console.log(this.state.snake)
+    })
+    
+    /*const middleware = (key) => {
       window.setInterval(() => {
         control[key]()
         console.log(this.state.snake)
       },1000)
-    }
+    }*/
 
-    window.addEventListener('keydown', key => {
-      middleware(key.key)
-      console.log(this.state.snake)
-    })
   }
-  
+  componentWillMount() {
+    
+  }
   componentDidMount() {
-    this.handleControl()
     this.createSnake()
+    this.handleMoving()
   }
 
   render() {
